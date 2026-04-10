@@ -1,1 +1,32 @@
 Two Sum 
+Peak Element
+Merge Intervals
+Decode Ways
+Number of Islands
+Bi-partite graph
+Min capacity to ship D packages
+Koko Eating bananas
+Trains and platforms 
+Search in Rotated Sorted Array
+Set Matrix Zeroes 
+Burst Balloons 
+First Missing Positive 
+Longest Increasing path in matrix 
+LRU Cache 
+Jump Game 2 
+Sliding Window 
+N-queen 
+Maximum Rectangle Area in Histogram 
+Best time to buy and sell stock 
+Container with most water 
+Group Anagrams 
+Permutations 
+Reverse String 
+Kth Largest Element in array 
+Minimum Sum Subarray 
+Add one to Linked List 
+Valid Parentheses 
+Remove All Adjacent Duplicates in String
+Max Consecutive Ones III
+Add one to LinkedList 
+Power and Recursive Digit Sum

@@ -1,0 +1,39 @@
+Zomato food Delivery 
+Ecommerce Application 
+BookMyShow Application 
+Hospital Management System 
+Airport Scheduler 
+Train booking - IRCTC 
+Uber/Ola
+Transaction Enrichment Service
+Online marketplace where users can buy and sell products - OLX
+Splitwise
+Simplify debt algo 
+Fund Transfer System
+User ID assigning System
+Credit card payment System
+Order management system
+Payment Systems 
+Notification system 
+
+API design 
+
+
+
+
+priority queue design, priority handling, race conditions, starvation, and concurrency.
+Event-driven processing, DB selection, scalability
+API design , database schema 
+
+GROW (online trading system) focus on real time stock price updates , order management. 
+
+APIs, Database schema and how to make sure that the data is strongly consistent.
+
+Transaction Enrichment Service that:
+
+Consumes multiple raw event streams (payment events, user metadata, merchant info)
+Enriches those events based on type (adds risk scores, merchant categories, geo-location)
+Produces a unified enriched stream
+Stores data in scalable, queryable format for analytics
+
+Key problems solved in previous experience

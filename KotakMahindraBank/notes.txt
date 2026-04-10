@@ -1,0 +1,102 @@
+I was given three types of travel passes:
+
+1-day pass (cost = a)
+
+1-week pass (cost = b)
+
+1-month pass (cost = c)
+
+Given an array of travel days, I had to compute the minimum cost to cover all travel days.
+Since this was a Dynamic Programming problem and DP is not my strongest area, I struggled initially. The interviewer guided me through the thought process, after which I was able to implement the solution correctly.
+
+
+
+partition vs topic: a topic is an abstraction in Kafka that represents a source and destination of messages. Consumer groups coordinate consuming messages from a topic. A topic has 1 or more partitions, which are the smallest unit of parallelism that Kafka supports. A producer can choose which partition receives each message. A consumer consumes from 1 or more partitions - there's no fractional partition. Partitions can be readily added to topics, but cannot be removed.
+A consumer queries brokers for the messages in one or more partitions of one or more topics. A consumer group is a group of consumers (duh!), and Kafka offers easy to use load balancing features where each message is consumed by one consumer. Kafka accomplishes this by having an assignment of a topic's partitions to each consumer. As consumers leave and join the partitions are rebalanced among consumers.
+If there are 2 partitions and 3 consumers, how would you distribute it: Kafka is designed around 1 partition:1 consumer so you're a little screwed. The real answer is "always consider making topics with more partitions than you need right now." The most obvious way is to have your fastest two consumers each consume from one partition each, and leave the slowest consumer idle. Another Kafka way is to add a new partition, then the third consumer now has a partition it can consume from going forward. There exist other hacky ways, e.g. manually assigning offset ranges. For example you can tell consumer A to read all of partition one, consumer B to read offsets 0 to 1e6 in partition two, and consumer C to read offsets 1e6+1 to 2e6 in partition two. You can even add a "tee service" where you add a fourth consumer that reads from the original two-partition topic and publishes to a three-partition topic.
+How would you ensure messages come in a proper order: technically you don't. Kafka is an immutable write-ahead log: once messages are written to the broker they are immutable and their offset remains as it is forever. The brokers are the sole source of truth for the offsets and thus ordering. Therefore the only way to ensure message ordering is correct is to get it right in the first place: on the producer side. Your interviewer is probably fishing for "max-inflight-requests" and "acks," which you can collectively set to make sure that if you publish message batch A before B, then the broker receives and commits messages A before B. In practice you must these, AND you must carefully plan out your topics, partitions per topic, and which ones each of your publishers write to and when.
+
+PostgreSQL:
+
+primary key versus unique constraint. Primary key: unique and typically immutable value that uniquely identifies each record. Some kind of arbitrary auto-incrementing ID is very common here. Primary keys are valuable for the implication: "this is what you use to grab specific records." Unique constraint: the DB ensures that no two rows have the same entry for a certain column(s). In practice pretty much the same thing as a primary key in terms of properties. But a unique column is less "special," you can imaging telling your tech lead "hey we should get rid of that unique column for [reasons]," whereas you'd never say "hey let's delete the primary key."
+ACID properties: "how to fail a candidate without telling them they're going to fail:" these are fraught with many opinions and are interrelated
+
+A: atomicity: all changes are made or they're all not. Touches on transactions, consistency, Example: adding an order to an order table, and reducing the available quantity in a warehouse table)
+C: consistency, see above, Certain properties must hold like "the warehouse quantity cannot be negative" or "the customer ID in the order table must exist in the customer table" (foreign key constraint)
+I: isolation: to what extent are reads in one transaction affected by writes in another transaction? If you query a table at the start of a transaction, then you query it again later, are the results are same or different? And why?
+D: durability: "thou shalt not lose committed data." If the master for a shard dies then the data should be recoverable (replication, backups). If several servers are involved in a distributed transaction, then committing the transaction should result in all the data being committed to all nodes: multi-phase commit (this touches on transactions, atomicity, consistency)
+A transaction is a group of queries that read and write data and modify tables. They're valuable because SQL implementations let you define different isolation levels among transactions, see isolation above.
+
+How many types of isolation are there: many. In theory there are generally four widely accepted levels:
+
+read uncommitted: reads return whatever is in the table right now, which may reflect writes that haven't been committed yet. Allows "dirty reads"
+read committed: whatever is in the table right now, but only from writes that have been committed
+repeatable read: whatever was available when the transaction began is what the transaction sees. Often also called "snapshot isolation"
+serializable: repeatable read, plus ensures that the current transaction, along with other transactions that modified these rows, could have been executed one-by-one in some order.
+See also the terms: "transaction anomalies" and
+
+dirty read: a read returned uncommitted data
+nonrepeatable read: two reads of the same row (relation) return different results
+first read, R1, got e.g. "Alice, Blue"
+then another transaction updates Alice's favorite color to Green
+second read, R1, got e.g. "Alice, Green"
+phantom read: two reads of the same table return different row sets
+first read, R1, gets all users with favorite color blue: "[Alice]"
+another transaction writes "Bob, Blue" to the table
+second read, R1, gets all users with favorite color blue again: "[Alice, Bob]"
+serialization anomaly: two transactions T1 and T2 are done that don't suffer from the above anomalies, but their effects still can't be explained by T1 -> T2 or T2 -> T1.
+canonical example: T1 and T2 both subtract 100fromAlice 
+′
+ scheckingaccountwithbalance150, with a requirement that the ending balance is not negative
+T1: will repeatably read that the balance is 150andupdateitto50. same with T2. Result with isolation levels up to repeatable read: her balance ends at $50. and both transactions succeed
+this is a serialization anomaly: both transactions have repeatable reads and no phantom reads... but their completion can't be explained by T1 followed by T2 or vice-versa
+at the transaction isolation level, after T1 or T2 completes, the other transaction would fail. The first transaction results in balance 50.Thesecondtransactionwillberetried,seethenewbalanceof50, and not subtract another
+So why did I say in practice there are infinite?
+
+the SQL standard suggests some levels
+but individual vendors are allowed to provide stronger guarantees for each level, resulting in differences among SQL engines for the same level
+SQL implementations can also add more levels, e.g. MS SQL Server has five levels (adding "snapshot isolation," between "repeatable read" and "serializable")
+This can be an awful interview question if your interviewer is opinionated - you can fail because they're not familiar with the terms themselves (common), or you answer "four" or "three"*** as a PostgreSQL user, but they use MS SQL Server and expect you to say "five," or you can say "there are only four" and the interviewer is like me and says "nah there are tons, it depends on all kinds of things." *** Postgres: read_uncommitted and read_committed have the same results because Postgres never allows dirty reads. So there are four keywords but only three different behaviors!
+
+I think the principled answer to this question is anomaly-centric:
+
+list the various kinds of anomalies you care about (see above)
+then list the offered transaction levels, and which anomalies are possible in each
+An example is "repeatable read" versus "snapshot" isolations - similar, but with some subtle differences. You can start to see by the term "snapshot" that the guarantees are implementation-dependent, and there are many implementations, and therefore in theory many different anomalies that can happen across engines. Each combination in theory is a different isolation level.
+
+DSA questions
+
+reverse a string without using extra space:
+if possible: in-place mutation with two-pointer. Example: std::reverse(str.begin(), str.end())
+build the output string in place. Example: write all characters to an out array in reverse order, then return new StringWrapper(array). No extra space technically because the output doesn't count toward the space complexity
+if you don't have mutable strings nor string wrappers, e.g. Python: you can't do it
+(thus this question is language specific)
+find the kth smallest number in an array: common approaches include
+max heap of min k. Scan the array and maintain the heap. Return the top element. O(N log(k)) time, O(k) space
+min-heapify the input elements and pop k times: O(k log(N)) time and O(1) space if the input is an array you can heapify in place, else O(N) space
+sort and return the kth element: O(N log(N)) time and O(log(N)) space (quicksort in place) or O(N) space (mergesort, or can't modify input)
+quickselect: O(N) time, O(1) space if you can pivot in place else O(N) space
+the "right" answer depends on
+does the data all fit in memory? If not, and k is small, use the heap so you only need one pass over the input data. If yes, read on
+is the input array a mutable array? If so, quickselect. If not, read on
+if k is tiny, max heap of min k. If k is huge, almost N, then find the N-k largest element with a min heap of the max k. O(min(k, N-k)) memory, almost O(N)
+otherwise k is about N/2 and you can't modify the array which fits in memory: copy the array and sort it; you'd use O(N) memory for the heap methods anyway, but quicksort is faster than mergesort
+
+
+For each train, we can have a route map:
+
+trainId:
+station A -> station B -> station C and so on
+
+This relationship can be easily captured via delta timestamp that could be something as a difference between expected arrival time minus initial train starting time from the first station or other data structures like linkedlist .
+
+Now, for each train and station, we can store the number of available seats / available seat map.
+
+Query Operation:
+Now, for each query, the task is to check all station from requested source to requested destination station via intermediate station has a mimium 1 ( or no of requested seats avail).
+
+Range Min / set Intersection
+Simillarly Book Operation:
+
+Range Update Operation
+Now we can use strategy pattern to encapsulate it via different algorithms. Maybe via segment tree or adaptive fenwick tree.

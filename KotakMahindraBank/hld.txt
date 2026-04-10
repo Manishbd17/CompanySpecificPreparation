@@ -1,0 +1,35 @@
+Message brokers and event-driven architecture
+Kafka internals 
+Design pattern
+Caching redis , CDN
+Distributed system question list 
+about sharding
+concurrency
+deployment strategies
+
+How would you design a distributed backend system that can handle large-scale data processing or analytics?
+Can you discuss the considerations and best practices for deploying and scaling a distributed backend system in a cloud environment
+How to handle consistency in distributed database system?
+ * How to scale a system?
+ * How to handle deployment in failure situation?
+
+Difference between partition and topic
+What is consumer and consumer groups?
+If 2 partitions and 3 consumers are there, how would you distribute it?
+How you would ensure that messages are coming in proper order?
+
+Difference between primary key and unique constraint.
+Explain all A,C,I,D and some counter questions.
+What is transaction?
+How many types of isolation are there?
+
+Questions on threads and locks
+
+How https works
+Questions on distributed systems, CAP theorem, etc.
+How to handle concurrency in database
+How to handle deployment and make sure that the entire system does not go down while deploying to production
+
+
+detailed discussion on Kafka internals, including how producers, consumers, partitions, and offsets work
+
