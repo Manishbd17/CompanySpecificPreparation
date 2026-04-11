@@ -14,12 +14,11 @@ First Missing Positive
 Longest Increasing path in matrix 
 LRU Cache 
 Jump Game 2 
-Sliding Window 
 N-queen 
-Maximum Rectangle Area in Histogram 
 Best time to buy and sell stock 
 Container with most water 
 Group Anagrams 
+Maximum Rectangle Area in Histogram 
 Permutations 
 Reverse String 
 Kth Largest Element in array 
@@ -28,5 +27,4 @@ Add one to Linked List
 Valid Parentheses 
 Remove All Adjacent Duplicates in String
 Max Consecutive Ones III
-Add one to LinkedList 
 Power and Recursive Digit Sum
