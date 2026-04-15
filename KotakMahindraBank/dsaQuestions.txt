@@ -28,3 +28,7 @@ Valid Parentheses
 Remove All Adjacent Duplicates in String
 Max Consecutive Ones III
 Power and Recursive Digit Sum
+Longest common subsequence 
+Text Justification 
+Subarray sum equals K 
+House Robber 

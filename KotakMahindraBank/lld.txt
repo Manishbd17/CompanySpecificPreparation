@@ -19,8 +19,6 @@ Notification system
 API design 
 
 
-
-
 priority queue design, priority handling, race conditions, starvation, and concurrency.
 Event-driven processing, DB selection, scalability
 API design , database schema 
@@ -37,3 +35,15 @@ Produces a unified enriched stream
 Stores data in scalable, queryable format for analytics
 
 Key problems solved in previous experience
+
+how to search uber ride 
+how to calculate fare 
+how to track the ride of the passenger 
+
+Ecommerce so many users come to the system. 
+track activity of every users when there is lots of users. 
+
+macbook finder design 
+search based on name, directory, file system design 
+ 
+ API design 

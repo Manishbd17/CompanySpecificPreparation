@@ -33,3 +33,26 @@ How to handle deployment and make sure that the entire system does not go down w
 
 detailed discussion on Kafka internals, including how producers, consumers, partitions, and offsets work
 
+cap theorem 
+trade offs
+choice of database 
+indexing
+
+api gateway 
+microservices 
+security questions 
+JWT , auth 
+symmetric vs assymetric encryption 
+
+
+
+ how to make system scalable . 
+ how to handle large data like 10-20k users hitting login at same time . 
+ separate layer for login service , system work fine without lag . 
+ how to load data at once. 
+
+one GET API , List<Employee> 
+you are making traditional layered architecture how kafka will work here . 
+if you implement Kafka 
+
+Big Billion Days flash sale system . 
