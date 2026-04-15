@@ -56,3 +56,4 @@ you are making traditional layered architecture how kafka will work here .
 if you implement Kafka 
 
 Big Billion Days flash sale system . 
+

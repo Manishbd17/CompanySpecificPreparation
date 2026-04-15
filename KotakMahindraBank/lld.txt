@@ -47,3 +47,11 @@ macbook finder design
 search based on name, directory, file system design 
  
  API design 
+
+
+ThreadPool Executor
+
+
+Design patterns you've used.
+Design principles you've used. 
+Architecture of project.
