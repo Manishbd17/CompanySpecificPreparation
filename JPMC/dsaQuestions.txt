@@ -1,0 +1,12 @@
+Count the number of duplicates in an array
+Min Stack
+Delete Node in a Linked List
+Trapping Rain Water 
+Two Sum 
+Binary Tree Level Order Traversal 
+Minimum no. of platforms needed for railway
+Count no. of valid substrings with no repeating adjacent characters and with len in range of (minLen, maxLen)
+Combination Sum 2 
+House Robber 2 
+ maximum batch efficiency for given set of servers and batches
+Valid Parentheses

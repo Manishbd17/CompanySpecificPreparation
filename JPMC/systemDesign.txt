@@ -1,0 +1,33 @@
+Google Drive-like system
+advantage of JAVA 21 new features, compare JAVA with other languages like scala ( i have worked with scala), concurreny control in JAVA and extended to same in distributed systems
+designing a website that can take file/folder from user (examplen aadhar/set of documents) validate it from some third party software for its validity (which will take 2-3 seconds), store it in our system and provide back a tracking link to user
+design (HLD) a Rate Limiter
+ Design principles, Security Concerns, Logging, Clean code, SQL injections, Middle man attacks, Concurrency and MultiThreading issues
+ Design a News Aggregator System which has to be done over Hackerrank Whiteboard.
+
+Present real time updates from multiple new sources to a UI where users can login and set their preferences.
+Java Streams 
+Features of java 8, 11 and 17.
+What is Spring?
+Why do we use Spring?
+Difference between Spring and Spring boot?
+What is runnable and callable.
+Types of exceptions in Java.
+Exception hierarchy in Java.
+Questions around multithreading.
+What are the different Design patterns in java, explain a few with examples.
+How does autowiring work in Spring.
+What is spring security.
+
+5-6 comments like Class violating SRP principal, usage of volatile keyword for state changing variable, hardcoded urls, credentials, secrets, exception handling for API call, etc. 
+design Airbnb/NoBroker type property listing service
+design a full scale Buying-Renting Application which had payment service, property service, etc
+ security flaws like SQL Injection, Man-in-the-middle attacks, volatile keyword, Applying SOLID principles, Recognizing concurrency/thread-safety issues.
+ Design a file processing platform, Users should be able to upload, view, search, and delete files.
+
+past projects and Spring Boot fundamentals.
+SOLID principles, design patterns, UML relationships, and implementing the Builder pattern
+design a notification system from scratch.
+previous projects and backend development with Spring Boot.
+
+OOP concepts, static/volatile usage, and overall maintainability.
