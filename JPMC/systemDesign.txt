@@ -31,3 +31,44 @@ design a notification system from scratch.
 previous projects and backend development with Spring Boot.
 
 OOP concepts, static/volatile usage, and overall maintainability.
+
+
+//if we want to provide object level lock , how can we 
+//how do we refer object in class 
+//dependency injection 
+//lazy loading eager loading. 
+//serialization -- byte stream 
+//transient keyword 
+// hashCode - 1 . 5 elements e1 e2 
+// java guides , 
+// code practices
+// reactJS
+// hashMap.put(e1, x) hashMap.put(e2, y) hashMap.put(e3, z)
+
+// 1 2 3 4 5 
+// str.stream().forEach(x -> x*5).collect(Collectors.toList()); 
+
+//count occurence of i using java 8 
+//tochar - string to character arrya 
+//exception handling - child throws an exception null pointer and parent doesnt 
+// how Oauth works 
+// 2 methods 
+//calculate(Integer i)  // calculate(String s)
+// pass parameter as null - compile time error. 
+// is-a has-a coding example 
+//string consecutive integer  or not    101112      123 
+//application properties spring boot active profile dev 
+//JMeter load . 
+//singleton 
+//how to break singleton pattern
+//hashmap differnt scenarios 
+//default hashcode - JVM internally calculates overriden equals not, overriden hashCode . 
+//impact on performance , latency 
+//immutable classes 
+//static synchronized - class level lock . dirty read ISOLATION_LEVEL 
+//Executor framework threadpool executor 
+//dependency injection 
+//comparable vs comparator,  which bean to inject using Autowired. 
+//exception heirarchy . global exception handler .
+//how S3 timeout , how to connect to S3 
+//deadlock race condition 
