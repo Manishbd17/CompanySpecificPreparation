@@ -1,0 +1,1 @@
+Second round was on Java & spring basics, OOPs concept, design principle & patterns. 3. Third round was more on in depth questions on spring & java.

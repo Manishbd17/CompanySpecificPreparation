@@ -1,0 +1,34 @@
+Round 2 - LLD Round
+LLD of Delivery System of any app like Zepto/ Blinkit/ Nykaa (only from the perspective of the driver, not user).
+
+List down the functional and non-functional requirements.
+Use chat gpt to write the basic running code. Now write running code for the requirements you listed.
+Add some extra features like estimated time calculation, real time tracking details etc.
+Verdict - Strong Positive
+Round 3 - LLD Round
+LLD of McDonalds having multiple outlets.
+
+List down the microservices, entities, database schema, program flow and basic APIs.
+Tell how will have you handle concurrent orders by multiple users to preserve the consistency of the stock of ingredients at a particular store.
+Various follow-up questions were asked, like writing database queries to fetch details of orders/ stock/ payments etc. or how to auto-scale your design.
+Verdict - Strong Positive
+
+
+Then a design question - Design Tiny Url System. - https://medium.com/@narengowda/url-shortener-system-design-3db520939a1c
+How indexing works in MySql.
+How memory is managed in Java.
+A Database query question (using subquery).
+
+
+
+Design a Movie ticket booking app.
+-> I needed to first list down all the functional and non-functional requirements of the application
+-> Define actors/ users of the application.
+-> Design class diagram with relations
+-> Design database table and the relations.
+-> Some follow-up questions on the choice of design, database.
+
+I could do first three things, but time ran out and could not do the database design part.
+
+
+his round involved designing the low-level architecture for a ride-sharing application, focusing on driver/ride allocation, proximity search, and location history tracking capabilities.
