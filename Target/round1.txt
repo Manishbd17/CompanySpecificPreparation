@@ -1,0 +1,44 @@
+Round 1: This round was a DSA+LLD round. Below were the questions asked-
+
+Kafka Internals and working.
+SpringBoot questions.
+Java Deep Dive questions.
+Multi threading questions.
+DSA Question: Priority Queue data structure based. (LC Medium)
+LLD Questions: Design Parking Lot with some additional requirements.
+Experince on working with GenAI and agentic applications.
+
+
+DSA: Tower of Hanoi, Kth largest from stream
+Microservices, REST API, Java, Spring Boot, React
+SQL: Two simple queries
+Java Stream API
+Difficulty: Moderate
+
+
+Questions on resume
+The project that I am currently working on in curr company
+Some questions on how would I handle certain scenarios such as bottlenecks
+DSA problem: Product of array except self(Brute->Optimal), was asked to handle edge cases and where would my code fail(-ve TC)
+Questions on Java Streams, Given an integer array, separate odd and even elements using a single stream.
+
+
+Detailed discussions about my projects.
+Questions about the Circuit Breaker pattern and other microservice patterns.
+Asked about how I debug or find bugs in my projects (focused on observability).
+Valid Parentheses.
+Length of the Longest Substring Without Repeating Characters.
+
+
+Round 1: This was mixed of DSA + LLD kind of round
+DSA question was eay-medium related to Strings
+LLD question: Design Lift management only Classes, Interfaces interaction and Entity schema was discussed
+Some Java questions on Concurrency, Streams and Memory management
+Design patterns discussion on Singleton, Stategy and Decorator
+
+Palindromic String Partitioning .
+
+
+ Round 1 - DSA + LLD
+ Q1. Rotten Oranges
+ Q2. Design Notification system LLD

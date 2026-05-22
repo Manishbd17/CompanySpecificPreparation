@@ -1,0 +1,36 @@
+Find the Winner of the Circular Game
+Trapping rain water
+Min length of subarray exceeding the target sum
+maximum amount of rocks
+Find the number of unique substrings of size k, in a given string
+Fraction to Recurring Decimal
+Minimum number of steps for bishop to reach target position
+input - "ABABCABABCD"
+output - "AB*C*D"
+Magic Potion
+String compression
+Run length encoding
+median of two sorted arrays
+robot find coordinates
+implement a prefix based search
+
+Given a dictionary of the words(strings) which contains different words & you are given an input string e.g. “abd”. You need to find the largest word available in the supplied dictionary which can be made using the letters of input string. The returned word can contain only the same no of occurrences of the letters as given in the input string i.e. if a letter is given once then in the output it should be existed only once. Examples:
+
+1, Dictionary {“to”, “banana”, “toe”, “dogs”, “ababcd”, “elephant”} and input string is “eot”. Output should be “toe”
+2, Dictionary is same as specified in example a but the input string is “ogtdes” and the output is “dogs” and “toes”
+Given a string, find all the unique substrings of length 'len'.
+
+Given a forest ( one or more disconnected trees ), find the root of largest tree and return its Id. If there are multiple such roots, return the smallest Id of them.
+Given a map immediateParent, containing key-value pair indicating
+child -> parent relationship. The key is child and value is the corresponding immediate parent.
+Constraints
+
+Child cannot have more than one immediate parent.
+Parent can have more than one immediate child.
+The given key-value pair forms a well-formed forest ( a tree of n nodes will have n-1 edges )
+Example:
+Input:
+{ { 1 -> 2 }, { 3 -> 4 } }
+
+Expected output: 2
+

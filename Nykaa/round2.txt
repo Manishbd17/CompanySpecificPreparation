@@ -20,7 +20,6 @@ How memory is managed in Java.
 A Database query question (using subquery).
 
 
-
 Design a Movie ticket booking app.
 -> I needed to first list down all the functional and non-functional requirements of the application
 -> Define actors/ users of the application.
