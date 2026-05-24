@@ -1,0 +1,195 @@
+Garbage Collection
+
+Hashmap
+
+--hashing
+
+put ()
+
+get() equals
+
+
+ClassLoader in java
+
+/Bootstrap
+//Extension
+//Application
+
+Dependency injection
+
+Dispatcher Servlet
+
+Client -> Request
+
+
+/api/orders
+
+@Transactional
+
+
+
+Propagation level
+
+
+status codes
+
+
+2xx -- 200 , 201 --  // success purposes
+4xx -- not found, too many request
+5xx -- internal server error.
+
+HTTP -- GET, PUT, POST, DELETE,
+
+PUT and PATCH
+
+put-- update
+patch --
+
+
+microservices v/s monolithic
+
+//disadvantages of microservices
+
+
+
+communication b/w microservices
+
+sync , async
+
+
+Rate limiting
+
+-- indexing and  trees
+
+LSM
+Splay Tree
+
+
+ public static int lastIdx(int[] arr,int target) {
+        int n=arr.length;
+        int st=0,end=n-1;
+        int lastIdx=-1;
+        while(st<=end) {
+            int mid = st+(end-st)/2;
+            if(arr[mid]==target) {
+                lastIdx = mid;
+                st = mid + 1;
+            } else if(arr[mid] < target) {
+                st=mid+1;
+            } else {
+                end = mid-1;
+            }
+        }
+        return lastIdx;
+    }
+//nums = [5,7,7,8,8,10], target = 8
+    public static int firstIdx(int[] arr,int target) {
+        int n=arr.length;
+        int st=0,end=n-1;
+        int firstIdx=-1;
+        while(st<=end) {
+            int mid = st+(end-st)/2;
+            if(arr[mid]==target) {
+                firstIdx = mid;
+                end = mid-1;
+            } else if(arr[mid] < target) {
+                st=mid+1;
+            } else {
+                end = mid-1;
+            }
+        }
+        return firstIdx;
+    }
+
+
+//
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] nums = new int[] {0,1};
+        int tgt = 0;
+        int idx1 = firstIdx(nums,tgt);
+        int idx2 = lastIdx(nums,tgt);
+        System.out.println(idx1 + " " + idx2);
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//IVs
+
+
+
+public class Singleton {
+
+    private static Singleton instance = null;
+
+    private Singleton() { };
+
+    public static Singleton getInstance() {
+        if(instance == null) {
+            synchronized(Singleton.class) {
+                if(instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+//if we want to provide object level lock , how can we
+//how do we refer object in class
+//dependency injection
+//lazy loading eager loading.
+//serialization -- byte stream
+//transient keyword
+// hashCode - 1 . 5 elements e1 e2
+// java guides ,
+// code practices
+// reactJS
+// hashMap.put(e1, x) hashMap.put(e2, y) hashMap.put(e3, z)
+
+// 1 2 3 4 5
+// str.stream().forEach(x -> x*5).collect(Collectors.toList());
+
+//count occurence of i using java 8
+//tochar - string to character arrya
+//exception handling - child throws an exception null pointer and parent doesnt
+// how Oauth works
+// 2 methods
+//calculate(Integer i)  // calculate(String s)
+// pass parameter as null - compile time error.
+// is-a has-a coding example
+//string consecutive integer  or not    101112      123
+//application properties spring boot active profile dev
+//JMeter load .
+//singleton
+//how to break singleton pattern
+//hashmap differnt scenarios
+//default hashcode - JVM internally calculates overriden equals not, overriden hashCode .
+//impact on performance , latency
+//immutable classes
+//static synchronized - class level lock . dirty read ISOLATION_LEVEL
+//Executor framework threadpool executor
+//dependency injection
+//comparable vs comparator,  which bean to inject using Autowired.
+//exception heirarchy . global exception handler .
+//how S3 timeout , how to connect to S3
+//deadlock race condition
+
+
+how will you choose index
+how datadog alerts creation is done
+OAuth working ?
+JAVA SPRINGBOOT

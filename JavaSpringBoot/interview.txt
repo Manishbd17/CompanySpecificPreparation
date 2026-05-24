@@ -1,0 +1,119 @@
+//Springboot autoconfiguration
+
+synchronization and volatile
+Java Memory Model
+
+@SpringBootApplication
+
+Dependency Injection
+Completable Future
+HashMap internal working
+
+F DI
+
+@Autowired
+private PaymentService paymentService;
+
+C DI
+
+@Controller
+public PaymentController {
+
+	PaymentController(PaymentService paymentService) {
+		this.paymentService = paymentService;
+	}
+
+}
+
+//secure REST APIs using Spring security and JWT
+
+requests -> spring security filter chain -> authentication -> authorization -> controller
+
+Security Configs --
+
+JWT -- JWT Encoder decoder
+
+Server signs the JWT token
+Client sends the JWT token in the headers.
+
+
+//Unit Testing and Integration Testing .
+
+
+//Closure in Javascript
+
+//Hoisting
+
+//Virtual DOM
+
+//useState , useReducer
+
+//useMemo , useCallback
+
+
+
+
+//Check if frequency of ALL characters is same.
+// Return "YES" if true, "NO" otherwise.
+
+// Input: s = "aabbcd"
+// Output: "NO"  (a:2,b:2,c:1,d:1)
+
+// Input: s = "abc"
+// Output: "YES" (a:1,b:1,c:1)
+
+
+
+// Now modify: A string is ALSO valid if you can remove EXACTLY ONE character
+// to make all remaining characters have same frequency.
+
+// Input: s = "abcc"
+// Output: "YES"  (remove one 'c' → a:1,b:1,c:1)
+
+// Input: s = "aabbcd"
+// Output: "NO"   (no single removal works)
+
+
+
+import java.util.*;
+
+class Main {
+
+    public static int countFreq(String s) {
+        Map<Character,Integer> mp = new HashMap<>();
+        for(int i=0;i<s.length();i++) {
+            if(!mp.containsKey(s.charAt(i)) )
+                mp.put(s.charAt(i),1);
+            else
+                mp.put(s.charAt(i),mp.get(s.charAt(i)) + 1);
+        }
+        List<Integer> lst = new ArrayList<>();
+        for(Map.Entry<Character,Integer> entry : mp.entrySet())
+            lst.add(entry.getValue());
+            //2 2 1 1
+            //1 1 1
+            //abcc -- 1 1 2  cnt = 0;  1
+        int cnt=0;
+        int first = lst.get(0);
+        for(int i=1;i<lst.size();i++) {
+            if(lst.get(i)!=first)  {
+                if(cnt!=0)
+                    return 0;
+                if(Math.abs(lst.get(i)-first)==1 && cnt==0) {
+                    cnt=1;
+                }
+            }
+        }
+        return 1;
+        //TC : 0(n) + O(n) == O(n)
+        //SC : O(n) + O(n) == O(n)
+    }
+    public static void main(String[] args) {
+        String s = "aabcc";
+        int val = countFreq(s);
+        if(val==0)
+            System.out.println("No");
+        else
+            System.out.println("Yes");
+    }
+}

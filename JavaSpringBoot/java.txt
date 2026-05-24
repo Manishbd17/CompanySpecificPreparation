@@ -1,0 +1,16 @@
+if someone changes something in sealed  class
+how you have designed locks/ synchronization.
+how would you ensure uniqueness
+batching how will you do
+how will you ensure failure of an api
+
+second smallest element in array
+trapping rain water.
+
+there could be more technical depth .
+limited to the tools u r using AI.
+java springboot,
+
+1 performs better.
+
+

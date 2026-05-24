@@ -1,0 +1,71 @@
+Request -> API 1
+
+
+API 1 -> API 2
+
+API 2 -> Response
+
+
+10K unique names
+arraylist - check also name exists
+list set queue.
+fastest retrieval
+
+
+1 2 3 4 5 6 7 8 9 10
+where you'll keep locks
+how to ensure idempotency
+API level saga
+how to implement , status exception .
+cache invalidation technique
+write through cache.
+saga pattern
+jumio
+how do you scale the email, notification and push channels.
+how do you ensure only unique things are there , email, name, phone, can you implement that.
+how will you scale
+at an api level .
+Payment API
+
+IMPS - UPI
+
+Payment Mode
+
+
+
+Req --> Payment API -> Payment Mode -> Response
+
+npci api -> txn -> timed out -> client.
+
+1.
+
+req 1 -> IK 1
+req 2 -> IK 1
+
+
+//req comes and get timed out.
+//req success and failure .
+
+
+400 //  ,
+
+500 // server.
+
+sealed classes
+
+
+if(abc instanceOf abcjklsb) {
+
+}
+
+record
+
+
+controlled inheritance.
+
+code 2 , code 1-- repo
+
+Eventual Consistency
+Leader Election
+Distributed Locks
+Idempotency Keys

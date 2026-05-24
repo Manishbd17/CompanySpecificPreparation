@@ -1,0 +1,45 @@
+
+4.
+select name,sum(marks) as total
+from student
+group by name
+order by total desc
+
+5.
+
+find /path/to/folder -name "filename"
+find /path/to/folder -iname "filename" //case insensitive
+find /home/user/documents -name "example.txt"
+
+
+find /home/user/documents | grep "example.txt"
+ls -R /path/to/folder | grep "filename"
+`
+
+6.
+find /path/to/folder -name "*.zip" -exec sh -c 'unzip -p "{}" | grep -l "word"' \; -exec ls -lt "{}" \; | head -n 6
+
+find /path/to/folder -name "*.zip": Finds all zip files in the specified directory and its subdirectories.
+-exec sh -c 'unzip -p "{}" | grep -l "word"' \;: For each zip file, unzip -p extracts the content to standard output without creating files, and grep -l "word" checks if the word exists.
+-exec ls -lt "{}" \;: Lists the found zip files with their modification time in long format and sorts them by time.
+head -n 6: Since ls -lt outputs two lines for each zip file (one for the match and one for the file details), head -n 6 gives the latest 3 files.
+
+
+
+find /path/to/folder -name "*.zip" -exec zipgrep -l "word" {} \; | xargs ls -lt | head -n 3
+
+zipgrep -l "word" {} \;: Searches for the word in the zip files and lists only the matching files.
+xargs ls -lt: Sorts the matching files by modification time.
+head -n 3: Shows the latest 3 files.
+
+7.
+chmod 475 <FILENAME>
+4 (Set User ID - SUID bit): The 4 at the beginning sets the Set User ID (SUID) bit. When this bit is set on an executable file, any user running this file will execute it with the permissions of the file's owner.
+
+7 (Owner Permissions): The 7 means that the owner of the file has read (4), write (2), and execute (1) permissions.
+
+5 (Group Permissions): The 5 means that the group members have read (4) and execute (1) permissions.
+
+5 (Others Permissions): The final 5 means that others (anyone else) also have read (4) and execute (1) permissions.
+
+

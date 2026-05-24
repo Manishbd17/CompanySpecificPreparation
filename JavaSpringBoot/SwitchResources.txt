@@ -1,0 +1,62 @@
+The Switch Prep
+Timelines.
+ Preparation Complete.
+Resume + Linkedin + Naukri + instahyre.
+ Tier 1 Job Search
+
+
+5 lac
+5,00,000
+
+
+
+Section 1 : DSA
+(i) Blind 75
+(ii) Company wise questions --
+Microsoft / Atlassian / Uber / Intuit / Salesforce
+Amazon / PhonePe / Servicenow / Visa / Goldman Sachs
+(iii) 189 questions list
+(iv) Grind 169
+
+
+Section 2 : LLD
+(i) OOPs
+(ii) https://www.udemy.com/course/low-level-system-design-an-interview-perspective/
+(iii) 10 design questions minimum
+
+Section 3 : HLD
+(i) YT Videos - Hello Interview
+(ii) System Design Primer, Alex Xu
+(iii) Sanket Singh Uber Design
+
+Section 4 : Behavioral
+
+Amazon Leadership Principles
+
+Your Project + PayPal Architecture.
+
+Revision
+
+Specific Company Questions -- Step 5
+
+Interview Date -- Leetcode Interview Experience '
+https://www.youtube.com/watch?v=1NJB54UB8nE&list=PLQEaRBV9gAFvzp6XhcNFpk1WdOcyVo9qT&index=34
+https://www.linkedin.com/posts/archy-gupta-myprofile_systemdesign-learning-concepts-activity-7427691134996643840-64uz?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACpdpXkBPTTEjd0xbi6tcpx2elZdS1dBeM8
+
+Resources :
+My leetcode profile: https://leetcode.com/u/hargunalone/
+
+1. Blind 75:- https://leetcode.com/problem-list/2jextkyj/
+2.ll Companies DSA list( This is my list, tum apni khud banao, isme sirf tier 1-2 tier companies)
+https://leetcode.com/problem-list/2m6sdb2i/
+3.Grind 165: https://leetcode.com/problem-list/2je55eot/
+4.LLD c++ course:- https://www.udemy.com/course/low-level-system-design-an-interview-perspective/learn/lecture/21421598#overview
+5.HLD youtube video:- https://www.youtube.com/watch?v=ZotHUoS-RCE&t=3554s
+6.My System Design Interview format:-
+Splitwise :- https://leetcode.com/discuss/general-discussion/7499804/spliwise-without-groups-notes-lld-by-ano-ufgm/
+Job scheduler :- https://leetcode.com/discuss/post/7500504/job-scheduler-notes-lld-by-hargunalone-13sp/
+Ride Sharing application:- https://leetcode.com/discuss/post/7417581/ride-sharing-application-notes-lld-by-ha-bdxm/
+7.Behavorial/Hr round :-
+https://fortifyexperts.com/wp-content/uploads/2021/01/Fortify-Experts-Behavioral-Questions-Based-on-Amazon-Principles.pdf
+8.Resources for polish if you have more time :-
+https://leetcode.com/discuss/post/6906753/amazon-hld-lld-dsa-questions-by-anonymou-sepk/

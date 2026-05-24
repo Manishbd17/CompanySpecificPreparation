@@ -1,0 +1,207 @@
+You are given an array of words where each word consists of lowercase English letters.
+
+wordA is a predecessor of wordB if and only if we can insert exactly one letter anywhere in wordA without changing the order of the other characters to make it equal to wordB.
+
+For example, "abc" is a predecessor of "abac", while "cba" is not a predecessor of "bcad".
+A word chain is a sequence of words [word1, word2, ..., wordk] with k >= 1, where word1 is a predecessor of word2, word2 is a predecessor of word3, and so on. A single word is trivially a word chain with k == 1.
+
+Return the length of the longest possible word chain with words chosen from the given list of words.
+
+
+
+Example 1:
+
+Input: words = ["a","b","ba","bca","bda","bdca"]
+Output: 4
+Explanation: One of the longest word chains is ["a","ba","bda","bdca"].
+Example 2:
+
+Input: words = ["xbc","pcxbcf","xb","cxbc","pcxbc"]
+Output: 5
+Explanation: All the words can be put in a word chain ["xb", "xbc", "cxbc", "pcxbc", "pcxbcf"].
+Example 3:
+
+Input: words = ["abcd","dbqca"]
+Output: 1
+Explanation: The trivial word chain ["abcd"] is one of the longest word chains.
+["abcd","dbqca"] is not a valid word chain because the ordering of the letters is changed.
+
+
+Constraints:
+
+1 <= words.length <= 1000
+1 <= words[i].length <= 16
+words[i] only consists of lowercase English letters.
+
+
+
+You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+
+
+
+Example 1:
+
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+Example 2:
+
+Input: nums1 = [1], m = 1, nums2 = [], n = 0
+Output: [1]
+Explanation: The arrays we are merging are [1] and [].
+The result of the merge is [1].
+Example 3:
+
+Input: nums1 = [0], m = 0, nums2 = [1], n = 1
+Output: [1]
+Explanation: The arrays we are merging are [] and [1].
+The result of the merge is [1].
+Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+
+
+
+
+
+Main.java
+
+
+
+
+public class Main {
+
+    public static int[] solution2(int[] nums1,int[] nums2,int m,int n) {
+        int  k=m+n-1;
+        int i=m-1, j=n-1;
+        while(i>=0 && j>=0) {
+            if(nums1[i] > nums2[j]) {
+                nums1[k--]=nums1[i--];
+            } else  {
+                nums1[k--]=nums2[j--];
+            }
+        }
+        while(j>=0) {
+            nums1[k--]=nums2[j--];
+        }
+        return nums1;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        int[] nums1 ={1};
+        int[] nums2 = {} ;
+        int m=1,n=0;
+        nums1 = solution2(nums1,nums2,m,n);
+        for(int i=0;i<m+n-1;i++)
+            System.out.println(nums1[i]);
+        // Your code here
+    }
+}
+
+
+
+LLD
+
+
+
+Food Delivery Platform – Restaurant Ordering Backend
+
+Prompt:
+
+Design the backend components for a food delivery platform where users can browse restaurants, add food items to cart, and place orders. Consider features such as user authentication, restaurant/menu management, cart operations, and order lifecycle.
+
+Sub-components to explore:
+
+User Authentication – Signup, login, token/session handling
+Restaurant & Menu Management – Restaurants can add/update/delete menu items
+Search & Filtering – Search restaurants/items by name, cuisine, price, rating
+Cart Management – Add/remove/update item quantities in cart
+Order Management – Place order, view order history, cancel order before confirmation
+
+Swiggy/Zomato
+
+User Authentication
+Create User - /v1/auth/signup POST
+Login JWT -- /v1/auth/login  POST
+Refersh JWT -- /v1/auth/refresh POST
+
+Restaurant & Menu Management
+Add Restaurant -- /v1/restaurant     POST (admin)
+Add menu Item -- /v1/{restaurantID}/menu                POST
+Update menu Item -- /v1/{restaurantID}/menu/{menuId}     PUT
+Delete menu Item -- /v1/{restaurantID}/menu/{menuId}   DELETE
+
+
+Search and Filtering
+Search by name  --    /v1/search/restaurants?name=?     POST
+Search by cuisine --/v1/search/restaurants?cuisine=?     POST
+Search by price-- /v1/search/restaurants?price=?        POST
+Search by rating -- /v1/search/restaurants?rating=?     POST
+
+
+Cart Management
+
+Add item -- /v1/cart/item           POST
+Remove Item -- /v1/cart/{itemID}     DELETE
+update item Qty: -/v1/cart/{item}       PUT
+
+
+Order  Management
+
+Place order.  -- /v1/order          POST
+View Order History -- /v1/{userId}/orders   -- GET
+Cancel Order --- /v1/order/{orderId}/cancel    -- POST
+
+
+
+
+
+User Authentication
+
+CREATE TABLE users {
+    userID VARCHAR PRIMARY_KEY,
+    name VARCHAR,
+};
+
+
+Restaurant & Menu Management
+
+
+
+CREATE TABLE restaurant{
+    restaurantID VARCHAR PRIMARY_KEY,
+    restaurantName VARCHAR,
+    address VARCHAR,
+
+}
+
+CREATE TABLE menuItems {
+    menuItemId VARCHAR PRIMARY_KEY,
+    quantity NUMBER,
+    price FLOAT,
+    isAvailable NUMBER
+}
+
+CREATE TABLE cart {
+    cartId VARCHAR PRIMARY_KEY,
+    userId VARCHAR,
+    orderID FOREIGN KEY REFERENCES orders(orderId),
+}
+
+CREATE TABLE order {
+    orderId VARCHAR PRIMARY_KEY,
+    userID VARCHAR ,
+    history TEXT,
+    amount FLOAT,
+    restaurantID FOREIGN KEY REFERENCES restaurant(restaurantID),
+}
+
+CREATE TABLE user {
+    userID VARCHAR PRIMARY_KEY,
+    orderId VARCHAR,
+    address TEXT,
+}

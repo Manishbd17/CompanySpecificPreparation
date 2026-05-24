@@ -1,0 +1,199 @@
+switch(Object obj) -> {
+   case Integer i-> "I am Integer";
+   case String s->  "I am String";
+   case Object o -> "I am Object";
+   case Long l -> "I am Long";
+
+}
+
+
+number 5
+
+
+I am String
+
+
+
+Functional Interfaces
+
+predicate -- test
+function -- apply
+consumer -- accept
+supplier -- get
+
+Consumer<T>
+
+accept();
+
+Supplier -- output
+
+string str = "abcaabdbbbbce";
+
+6b3a2c1e1d
+
+a -- 3
+b -- 6
+c -- 2
+d -- 1
+e -- 1    sorted
+
+//streams
+
+str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c->c,Collectors.counting())).entrySet().stream().
+			.sorted((o1,o2) -> Long.compare(e2.getValue(),e1.getValue())).map(e -> e.getValue() + "" + e.getKey()).collect(Collectors.joining());
+
+
+.sorted((e1, e2) -> {
+    int freqCompare = Long.compare(e2.getValue(), e1.getValue());
+    if (freqCompare == 0) {
+        return Character.compare(e1.getKey(), e2.getKey());
+    }
+    return freqCompare;
+})
+
+
+// String to map
+str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting());
+//Map to string
+freqMap.entrySet().stream().flatMap(e -> Collections.nCopies(e.getValue().intValue(), e.getKey()).stream()).map(String::valueOf).collect(Collectors.joining());
+
+Comparable -- compareTo
+Comparator -- compare -- compareTo method -- custom ordering.
+
+
+//first non-repeating character in string
+str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting())).entrySet().stream()
+			.filter(e -> e.getValue()==1).map(Map.Entry::getKey).findFirst().orElse(null);
+
+//top k frequent elements
+nums.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().stream()
+			.sorted((a, b) -> Long.compare(b.getValue(), a.getValue())).limit(k).map(Map.Entry::getKey).toList();
+
+//duplicate elements
+str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting())).entrySet().stream()
+			.filter(e -> e.getValue()>1).map(Map.Entry::getKey).collect(Collectors.toSet());
+
+
+//most frequent character:
+str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().stream()
+			.max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
+
+//APIs to be blocked -- any request should not be served,
+
+/ /api/orders
+  /api/txn
+
+
+/api/*
+
+
+
+//request comes to client
+
+
+
+-- API gateway -> security filter chain -
+-- controller (APIs)
+-- Service
+-- repository
+
+
+
+10 controller .
+
+
+@RequestMapping("/api")
+
+
+@GetMapping("/orders")
+
+
+/api/orders GET
+
+
+dispatcher servlet
+
+resolvers
+
+
+indexing
+
+-- full text search -- inverted indexes
+
+@Component
+public interface Repo extends JPARepository<String,Long> {
+}
+
+@springbootapplication
+
+S3  HUGE FILE  -- 100MB
+
+upload it browser .
+URL -
+multi-part upload
+chunks.
+
+//resumeable upload
+
+
+uploader -->   > file service --> s3
+                    -- > DB
+downloader
+--> private key public key
+
+
+
+piece of code executed immediately after bean creation .
+
+bean created -->bean postprocessing->  preconstruct -> bean postprocessing --> postconstruct -> predestroy --> destroyed.
+
+AOP
+
+postconstruct
+
+
+@RequestMapping("/v1/sample")
+@RestController
+public class SampleController {
+ @Autowired
+ private SampleService sampleService;
+ @GetMapping
+ public void getData() {
+   SampleService service = new SampleService();
+   service.execute();
+ }
+}
+
+@Service
+public class SampleService {
+ @Autowired
+ private HelperService helperService;
+ public void execute() {
+   helperService.printData();
+ }
+}
+
+@Service
+public class HelperService {
+ public void printData() {
+   System.out.println("Printing Data");
+ }
+ }
+
+
+IOC container -- spring is managed .
+
+
+
+features of java 8 , 17
+current architecture of project
+communication b/w microservices
+how request flows
+who is publisher and consumer for Kafka.
+which DB do u use , Spring data JPA
+map.put() return method
+@Transactional annotation.
+design alerting monitoring system
+scalable
+security
+spring boot version

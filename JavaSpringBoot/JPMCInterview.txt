@@ -1,0 +1,82 @@
+JPMC
+
+
+private static Object lock = lock1;
+private static concurrency_level = READ_UNCOMMITTED;
+
+
+//Databases involved.
+
+//Flow something breaks. some database failed.
+
+//Saga Pattern
+
+t1. t2 t3
+
+t1 -> done, committed
+t2 --> failed  -- event
+t3 -->
+
+
+[ t1-> done,  t2->failed              ] -- Messaging queue
+
+
+SQL -- ACID
+
+datadog
+
+- p95, p99
+- error rates
+
+Microservice -- Java SpringBoot.
+Authentication -- list of users
+
+Oauth
+
+user -> third party app -> key -> authenticated
+
+URLs : home page , URLs
+
+//form of URls
+
+https://direct/leave-calendar.
+
+// number of URls is high , number of request is also high
+
+1M user urls , 80-100k req/hr
+
+S3
+
+s3 url
+
+multi-part upload .
+
+await s3.connect("s3 url", key);
+const upload = multipartUpload(file);
+
+Character stream
+
+s = a b b c d a c c d f
+
+first non - repeating character
+s.stream().filter(Collections.groupingBy(Functions.Identity,))
+Map<Character,Integer> mp = new HashMap<>();
+for(int i=0;i<s.length();i++) {
+	if(mp.containsKey(s.charAt(i)))
+		mp.put(s.charAt(i), mp.get(s.charAt(i))+1);
+	else
+		mp.put(s.charAt(i),1);
+}
+for(Map.Entry<Character,Integer> mp : entry.KeySet()) {
+	if(entry.getValue()==1)
+		return entry.getKey();
+}
+
+// f.   O(n).      O(n)
+
+   character.        integer.
+	a 				 2
+	b.               2
+	c.               3
+	d.               2
+	f.               1

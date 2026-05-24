@@ -1,0 +1,518 @@
+service based disadvantages
+product based kaise hua paypal
+resume related
+1. coming out of TCS
+2. preparations -- paypal
+3. rejections ideology notice period
+4. safeguard
+5. TCS market kaisi thi aur kaisi evolve
+6. end on a hopeful note -- tech industry stabilize
+things are not better.
+
+
+
+//textmate 1 -- sql query
+
+//nth highest salary.
+
+select sal from employee order by sal limit n-1,1
+select max(sal) from employee where salary not in (select
+ max(sal) from employee)
+
+
+ select salary from employee e1 where n-1 =
+ (select count(distinct salary) from employee e2 where e2.salary > e1.salary)
+
+
+
+
+ //textmate 2 -- bottomline interview experience
+
+
+ Bottomline Interview Experience.
+
+ UI --->   API     -- >
+ 	   GATEWAY
+
+ 	https://localhost:8143/salereturn/getSalesReturn
+
+ 	https://localhost:8143/tax/getTaxData.
+
+ 	//Security Filter Chain .
+
+
+
+ List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15,15,10,15,10);
+
+ // INT CNT
+ 	10 1
+ 	15 1
+ 	8 1
+
+
+
+ //input -e-- list
+
+ //output -- duplicateCnt -- here-3
+
+
+
+ public static int getDuplicateCnt(List<Integer> myList) {
+ 	int dupCnt=0;
+ 	int n=myList.length();
+ 	Map<Integer,Integer> mp = new HashMap<>();
+ 	for(int i=0;i<myList.length;i++) {
+ 		if(!mp.containsKey(myList.get(i)) )
+ 			mp.put(myList.get(i),1);
+ 		else {
+ 			dupCnt++;
+ 		}
+ 	}
+ 	return dupCnt;
+ }
+
+
+ rotate array by d places
+ arr[] = {1, 2, 3, 4, 5, 6, 7}     d=2
+ Output : 3 4 5 6 7 1 2
+
+
+	1. Reverse(0,d-1) -- 2 1 3 4 5 6 7
+	2. Reverse(d,n-1) -- 2 1 7 6 5 4 3
+	3. Reverse(0,n-1) -- 3 4 5 6 7 1 2
+
+
+
+
+
+ arr[] = {1, 2, 3, 4, 5, 6, 7}, d = 2
+ Output: 3 4 5 6 7 1 2
+
+ 0  1  2  3  4  5  6
+
+ d
+ 1, 2, 3, 4, 5, 6, 7.      d=5
+
+ 5  4  3  2  1  6 7	    // reverse(lst,0,5-1);
+ 5  4  3  2  1  7 6		// reverse(lst,d,n-1);
+ 6  7  1  2  3  4 5 		//reverse(lst,0,n-1);
+
+
+ public reverse(int[] lst,int st,int end) {
+ 	while(st<=end) {
+ 		int temp=lst[st];
+ 		lst[st]=lst[end];
+ 		lst[end]=temp;
+ 		st++;
+ 		end--;
+ 	}
+ }
+
+ public int[] rotate(int[] lst,int d) {
+ 	reverse(lst,0,d-1);
+ 	reverse(lst,d,n-1);
+ 	reverse(lst,0,n-1);
+ 	return lst;
+ }
+
+
+ public class SuperClass
+ {
+ 	protected void m1()
+ 	{
+ 		System.out.println("M1 Methods from Super Class");
+ 	}
+
+ 	public void Test()
+ 	{
+ 		System.out.println("Test Methods from Super Class");
+ 		m1();
+ 	}
+ }
+
+
+ public class ChildClass extends SuperClass
+ {
+
+ 	@Override
+ 	public void m1()
+ 	{
+ 		System.out.println("M1 Methods from Child Class");
+ 	}
+
+ 	public static void main(final String[] args)
+ 	{
+ 		final SuperClass obj = new ChildClass();
+ 		obj.Test();
+
+ 	}
+
+ }
+
+ Test Methods from Super Class
+ M1 Methods from Child Class
+
+
+ Get department,no of employees in a department,total salary with respect to a department from employee table order by total salary descending
+ 			Employee
+
+	name   id sal dept
+	X	1   100.  HR
+	Y	2   200   HR
+	Z 	3.  100   IT
+
+
+	HR  2   300
+	IT  1   100
+
+        name , id, sal, dept.
+ 		X     1.   100   HR
+ 		Y     2    100   HR
+ 		Z.    3    100.  IT
+
+ 		HR 2 200
+ 		IT 1 100
+
+
+
+ select dept,count(id) and emp,sum(sal) as tot_sal from employee group by dept order by tot_sal desc;
+
+
+
+
+//textmate 3-- skills.
+
+
+Hibernate, Microservices , RESTful APIs
+Frontend : ReactJs , HTML/CSS, Javascript
+Databases: MySQL, Postgres, Oracle , Cassandra
+Cloud: AWS, Docker, Kubernetes, Jenkins, Git, Gitlab
+Core Subjects: Data Structures and Algorithms, Operating Systems
+Miscellaneous: Design Patterns, Low Level Design, High Level Design , Kafka
+
+
+isko karne se kuch fayda nahi hota
+
+
+
+//textmate 4 -- BT Resignation
+
+
+due to unforseen personal circumstances, I will be putting the papers and mostly i'm not sure pawan at this time , i'll be maybe taking a career break ,
+some personal things were happening in my family from a long time, and now it has reached to a level that I have to go there and i'm not able to focus on job as of now.
+
+
+
+//textmate 5 --- interview experiences.
+
+
+//functional interface addition and subtraction of two numbers
+
+
+/= (a,b) -> a+b;
+
+Predicate<T> pre = (a,b) -> a-b;
+
+
+interface MySumInterface() {
+
+	public abstract int mySum(int a,int b) {
+		return a+b;
+	}
+}
+
+
+interface MySubtractnterface() {
+
+	public abstract int mySubtract(int a,int b) {
+		return a-b;
+	}
+}
+
+@FunctionalInterface
+public interface MyInterface() {
+	void abstract myfunc();
+}
+
+
+//Employee with even no. ids and sorting in descending order..
+
+empList.stream().filter(id -> id%2==0).sorted(Collections.reverseOrder());
+.sorted((o1,o2) -> (int)(o2.getId()-o1.getId()))
+List<Employee> empList
+
+
+empList.stream().filter(id->id%2==0).sorted()
+
+
+HashMap
+
+object
+
+hashCode and equals
+
+
+[]
+
+//concurrent modifict
+treeify thresold// untreeify
+
+clone
+
+marker interface // serializable
+
+
+
+//POST API
+
+
+Mycontroller.java
+
+
+@RestController
+@RequestMapping("/")
+public class Mycontroller {
+
+	@PostMapping("/api/{id}")
+	public Employee createEmployee throws CustomException(@PathVariable Long id) {
+		return empRepo.save(id);
+	}
+}
+
+App A // App B..
+ a -> B
+
+.permission
+
+Authorization // Authentication
+
+JWT // h
+
+@EnableWebSecurity
+
+
+lst.stream().reduce((a,b) -> a+b);
+lst.stream().mapToInt(e->e).average.getAsDouble();
+lst.stream().filter(e->e%2==0);
+lst.stream().map(e->String.valueOf(e)).filter(e->e.startsWith("8")).map(Integer::valueOf).collect(Collectors.toList());
+lst.stream().filter(e -> !dupNum.add(e)).collect(Collectors.toSet());
+lst.stream().limit(5).collect(Collectors.toList());
+lst.stream().sorted(Collections.reverseOrder()).distinct().limit(2).skip(1).findFirst().get()
+
+
+//textmate 6 -- paypal tasks
+
+
+
+bridge
+transport
+employee no.
+swag goodies registration
+
+
+//textmate 7 -- interview experience.
+
+
+
+public static void method(Object o) { System.out.println("Object method"); }
+public static void method(String s) { System.out.println("String method"); }
+method("dsa");
+
+Object method
+Object method
+
+Answer is String method.
+
+Thread t1= new Thread();
+
+@SpringBootApplication -- @Configuration, @ComponentScan,@EnableAutoConfiguration
+
+@Component
+
+@RestController (@Controller + @ResponseBody)
+
+@Repository
+@Table(name="emp")
+public EmpRepository extends JpaRepository<Employee,Long> {
+	.findAll() /.findById() / .save()
+}
+
+
+
+.wait
+.notify
+.compareTo
+.hashCode
+.equals
+.toString
+
+synchronized.
+
+List<lst>
+
+Callable.
+
+.call()
+
+Checked/Unchecked
+
+compareTo (o , Comparator)
+
+Comparable Comparator.
+.compareTo()  compare
+
+Collections
+
+.insert()
+
+@Qualifier.
+
+null key .
+
+default
+
+streams.   .filter(i-> i%2==0)       .map(i -> i*i)
+
+Spring DI
+
+class Animal {
+
+Dog dog;
+Fish fish;
+
+@Autowired
+public setDog(Dog dog) {
+	this.dog = dog;
+}
+
+@Autowired
+public Animal(Dog dog,Fish fish) {
+	super();
+	this.dog=dog;
+	this.fish=fish;
+}
+
+}
+
+
+
+numbers.stream()
+	.map( num -> {
+		if(num%2==0) return "A";
+		else if(num%3==0) return "B";
+		else return "C";
+	})
+	.forEach(System.out::println);
+
+
+public class SecurityConfiguration {
+
+
+//textmate 8 -- interview experience.
+
+
+String str = "Hello World";
+
+
+//
+Map<Character,Integer> mp = new HashMap<>();
+for(char c : str.toCharArray()) {
+	if(!mp.containsKey(c))
+		mp.put(c,1);
+	else
+		mp.put(c,mp.get(c)+1);
+}
+StringBuilder sb = new StringBuilder();
+
+for(Map.Entry<Character,Integer> entry : mp.entrySet()) {
+	if(entry.getValue()==1)
+		sb.append(entry.getKey());
+}
+
+return sb.toString();
+
+
+//
+
+str.chars().distinct().mapToObject().collect(Colletors.joining(""))
+
+
+
+name , id ,salary -- employee
+
+2nd highest salary
+nth highest salary -- SQL
+
+List<Employees> employee = Arrays.asList("");
+employees.stream().sorted(Collections.reverseOrder()).limit(2).skip(1)
+
+
+
+importance of soft skills
+
+
+https://www.youtube.com/shorts/5KIRSjdxoio
+
+
+
+//textmate 9 -- mail template
+
+
+
+Hi Haritha,
+
+Thank you so much for reaching out . I'm very interested to learn more about this role and contribute to developing scalable and high performant web applications for Goldman Sachs .
+
+With 3+ years of experience in backend technologies such as Java, Python,Springboot, frontend technologies such as React and Javascript and CI/CD tools including Docker,Kubernetes,Jenkins, I believe I can be a good fit for the team.
+
+PFA my resume here.  Also attaching my portfolio, leetcode and github profile URLs where you can get to see my works.
+
+Leetcode Profile : https://leetcode.com/man_fk_17/
+
+Portfolio link : https://manishsharma-portfolio.netlify.app/
+
+Github Profile : https://github.com/Manishbd17
+
+Thanks and Regards
+Manish Sharma
+
+
+//textmate 10 -- topmate
+
+
+
+TCS
+mechanical engineering
+2 years
+icici bank -- project
+java springboot
+tier 3 college
+product based company
+8 months
+300 + gfg 80+
+lld/hld design patterns.
+
+striver a2z portal --
+
+
+mock interviews --
+
+leetcode 150
+neetcode
+1.11 months
+3 months in TCS
+
+320 problems
+Blind 75
+Leetcode 150
+
+autofill resume / manual apply
+openings
+
+JPMC
+
+3 rounds
+
+Zoom Virtual Interview
+DSA Technical Questions Project Discussion
+

@@ -1,0 +1,91 @@
+//Java application for some business use cases
+
+Instagram
+
+//Functional Requirements
+//Non functional requirements
+
+
+  Data
+//searchService -- high hit number
+//createPostService --- less hit number
+
+load balancing
+
+multiple instances of searchService as per the data .
+
+  client --- >  |
+  				|     -->.  s1
+				|
+				|
+
+function dynamicLoadBalancing ( long req,long capacity,service s1) {
+	if(req > capacity)
+		createInstance(s1);
+}
+
+//Service discovery
+//payment
+//saga pattern cqrs pattern
+
+
+
+//---Database -- Relational Non Relational
+//Replicas of DB -- sharding .
+
+primary key
+indexing
+select *
+
+//data redundancy
+
+//Caching
+
+//Monolithic vs Microservices
+-- saga pattern
+
+//Communication -- synchronous vs asynchonous
+
+//layers in architecture -- 3 tier - architecture -- Presentation , Business , Repository
+
+//APIs -- OpenAPI
+
+//Load Balancing // Fault Tolerant
+
+//Available v/s Consistenjt
+
+//Latency
+
+//CDN --- Media Files
+
+2 clients -- USA , India
+
+-- Nearest geographical location .
+
+//Entity
+
+SOAP REST
+
+//Authorization and Authentication
+
+//Spring Security
+
+JPA Repository
+
+
+Table A     Table B
+id 			id
+1			1
+1			2
+2			2
+2			3
+3			4
+
+inner join // left join // full outer join
+ 3             5.          10
+ 3             5.          10.
+
+ each id count wise
+
+ select count(*),id from tableA group by id;
+
