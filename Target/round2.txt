@@ -1,0 +1,24 @@
+Design Uber-like Ride Booking Service
+Deep dive into current application at work
+
+Design a Personalized Promotion System (Gather all requirements and finally provide the rough API contracts, DB used and why and sample DB contracts)
+
+Q2. Design Notification system LLD
+
+Design ATM in last 20 minutes discusses requirements
+entities and thier UML diagram
+
+how are u usng Ai in daily use cases
+
+Give any two scenarios where you did something and you were very proud of
+Why Redis and not in-memory K,V storage?
+A detailed discussion on Kafka and MQ in general
+Then I was asked which DS will I use to solve -> Find the nearest driver when a request comes when someone books a ride in Uber/Lyft.
+Again, detailed discussion around the project that I was working on in the company.
+Java Streams + Lambda discussion.
+
+all the sorting algorithms I knew i listed down a few and they asked me explain all of those, and how they were better than their counterparts.
+
+questions on Java Streams, Given an integer array, separate odd and even elements using a single stream.
+
+design patterns question, SOLID principles, OOPS concept in the end.
