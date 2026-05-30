@@ -1,0 +1,35 @@
+Ebay :
+
+Two Sum
+Longest Substring without repeating characters
+
+Tavant:
+
+Reverse Linked List
+Minimum Size Subarray Sum
+
+Target:
+
+Spiral Matrix
+
+
+FreeCharge:
+
+Longest Repeating Character Replacement
+Spiral Matrix
+
+Nykaa:
+
+House Robber
+Priority Queue Question
+
+Goldman Sachs
+
+Second Smallest in array
+Trapping Rain Water.
+
+
+Randstad - Booking
+
+Reverse Linked List
+Subarray sum equals K

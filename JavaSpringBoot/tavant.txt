@@ -1,0 +1,17 @@
+if we write abstract method inside a class, do we need to make the class abstract ?
+
+if a class extend abstract class, does it has to override all abstract methods ?
+
+can a method be annotated with Bean annotation
+
+if we want to give some initial configuration to beans , where should we declare it apart from app.properties.
+
+what do we submit inside executor service
+
+before finishing a future task, if we call future.get(), what will be the outcome.
+
+how to join futures
+
+can constructor be private
+
+private classes.
