@@ -1,0 +1,78 @@
+2 questions related to monotonic stack (most famous questions on this topic) and 1 question similar to koko banana or flower bouquet problem mixed with some arithmetic
+
+Course Schedule 2
+Design a Stack With Increment Operation
+
+There is a sequence that contains in ascending order natural numbers that are products of at least two natural consecutive numbers, of which the following is an example: 2, 6, 12, 20, 24, 30, 42, 56, 60, 72 ...
+2 is a product of the consecutive natural numbers 1 and 2. Likewise, 6 = 2 × 3 or 6 = 1 × 2 × 3, 20 = 4 x 5, 60 = 3 × 4 × 5, and so on, all of which are products of two or more consecutive natural numbers.
+Return nth smallest number from the above sequence.
+If n = 3 Ans = 12
+If n = 5 Ans = 24
+
+Capacity To Ship Packages Within D Days
+
+Question 1:
+Design a map that allows you to do the following:
+
+Maps a string key to a given value
+Void insert(string key, int val) :  Inserts the key-val pair into the map. If the key already existed, the original key-value pair will be overridden to the new one.
+Returns the sum of the values that have a key with a prefix equal to a given string.
+Int sum(string prefix) : Returns the sum of all the pairs value whose key starts with the prefix.
+There is an initialize() method, in case you want to initialize any internal data structure of your map.
+Solved using Trie
+
+Question 2:
+You have “n” empty baskets, you are given the position of the empty baskets in an array called "position", where position[i] specifies the position of the ith basket. Additionally you have m balls to be distributed among the n baskets, You have to distribute the m balls into n baskets such that the minimum magnetic force between any two balls is maximum.
+The magnetic force between two different balls at position x and y is defined as |x-y|
+Solved using Binary Search
+
+Given a stream of incoming integers, find mean, median and mode such that we have unlimited disk space but very limited RAM.
+Implement a data structure with efficent insert delete search and getRandom methods.
+
+
+"Minimum time required to propagate the information from root to all child nodes of n-ary tree where in one path, the information can only be propagated at one level and other levels will need to wait"
+
+Round 2: PS/ DS round
+
+You are given a perfect binary tree where each node is the smallest element of the entire subtree in which it is present. Find the 2nd smallest of the entire tree in O(log n) time.
+Find whether dish preparation is possible or not. Input has various dependencies related to the formation of the dish ingredients (topological sort)
+Verdict - Positive
+
+
+Round 2: Problem Solving and Data Structures (PSDS)
+Duration: 1 hour
+
+I was asked two DSA questions:
+
+Maximum Volume of Water: Find the maximum amount of water that can be stored between vertical towers.
+Sliding Window Maximum: Print the maximum element from every k consecutive elements in an array of size n.
+The focus was on optimizing the solutions and explaining the approach clearly.
+
+
+First Round (PSDS):
+
+Given an incoming stream of IPs, return list of IPs that are occuring more than K times. Note - Can't use HashMap, HashSet, Dictionary. Storage and retrieval of IP should be done in constant time O(1). I used tries. Interviewer was convinced.
+There are N blocks for each of them length is given which is positive. We have to merge these blocks one by one to make it single block in the end. There are a cost associated with each merge.
+Merge Cost = sum of two block length getting merged. We have to minimise the total cost of merge all elements.
+Return the total merge Cost.
+Seeing the terms minimise the total cost made me think at first Its DP. But After running it with some examples, I saw its plain greedy. Solved it instantly. Interviewer seemed convinced.
+
+
+Round 1 : PS/DS
+Question 1 : https://leetcode.com/problems/rotate-image/
+Question 2 : https://leetcode.com/problems/course-schedule-iii/
+
+Round 2: PS/DS
+Question 1 : https://leetcode.com/problems/maximum-subarray/
+Question 2 : https://leetcode.com/problems/trapping-rain-water/
+Question 3 : https://leetcode.com/problems/word-break/
+
+Given a nxm matrix. Given a character 'A' you have tell if there exists a path to reach the right bottom cell. Matrix has some obstacles G you cant cross. you can move in 8 directions. Time complexity should be O(m+n) / O(m*n).
+
+. . . G . .
+A . . . . G
+. . . . . .
+. G . . . .
+
+Optimization: There is a charater S with superpower. If you encounter S you can skip the whole row.
+Hint: To collect the location of all G and S which will take mn. After that the function to find if path exist can be done in O(m+n)
