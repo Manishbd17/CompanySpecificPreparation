@@ -89,3 +89,27 @@ inner join // left join // full outer join
 
  select count(*),id from tableA group by id;
 
+You’re building a payment service. Before accepting a payment, you call a downstream Risk service to check if the transaction should be allowed or blocked.
+
+
+If the Risk service is degraded, degrade gracefully, don’t let it take down your service.
+Retries should happen for transient failures, not for business rejections.
+Your service must remain responsive even when Risk is fully down
+
+request  -> PS -> (Bloom Filter) risk svc (al/bl) -> allows/blocks
+
+accepting payment
+
+Bloom Filter -> probability -> Maybe / No response.
+
+What is the difference between @Bean and @Component?
+Hyesbo filters, interceptors, and AOP differ in Spring Boot?
+What are the differences between ApplicationContext and BeanFactory?
+How do you configure multiple data sources in Spring Boot?
+How would you design a scalable REST API in Spring Boot for high traffic?
+
+Bean , AOP, dependency injection ,inversion of control
+spring bean lifecycle, spring security,ApplicationContext.
+Common Annotations.
+
+
